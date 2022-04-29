@@ -1,4 +1,4 @@
-lG#!/bin/bash
+#!/bin/bash
 if [ ! -z "$STEAM_BETA_BRANCH" ]
 then
 	echo "Loading Steam Beta Branch"

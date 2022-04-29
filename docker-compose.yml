@@ -1,0 +1,11 @@
+version: '3.9'
+
+services:
+  squad:
+    image: enda2020/tfe_server
+    container_name: tfe_server
+    restart: unless-stopped
+    network_mode: "host"
+    tty: true
+    volumes:
+      - /home/emccabe/tfe/tfe-data:/home/tfe/tfe-dedicated/ 

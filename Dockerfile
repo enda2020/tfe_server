@@ -14,10 +14,10 @@ ENV STEAMAPPID 1170680
 ENV STEAMAPP tfe
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
 ENV LOGDIR "${STEAMAPPDIR}/TaskForceElite/Saved/Logs"
-#ENV DLURL https://raw.githubusercontent.com/CM2Walki/Squad
+
 
 # Install, update & upgrade packages
-# Create user for the server
+# Create 0user for the server
 # This also creates the home directory we later need
 # Clean TMP, apt-get cache and other stuff to make the image smaller
 # Create Directory for SteamCMD
