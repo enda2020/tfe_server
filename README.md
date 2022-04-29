@@ -36,7 +36,7 @@ Here we will:
 mkdir -p ~/tfe/tfe-data && cd ~/tfe
 
 #download and start container 
-sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ --name tfe_server enda2020/tfe_server
+sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ enda2020/tfe_server:latest
 ```
 **Initial Server Tool Credentials will be printed on the screen, make note of them.**
 
