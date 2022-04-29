@@ -1,4 +1,4 @@
-#!/bin/bash
+lG#!/bin/bash
 if [ ! -z "$STEAM_BETA_BRANCH" ]
 then
 	echo "Loading Steam Beta Branch"
@@ -55,5 +55,5 @@ eval  cd ${STEAMAPPDIR}/CommunityTool/DSC  &&   ${STEAMAPPDIR}/CommunityTool/DSC
 
 echo "DSC started, Return code is $?"
 
-wait
 
+wait
