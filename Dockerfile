@@ -1,5 +1,6 @@
 ############################################################
 # Dockerfile that contains SteamCMD
+# This file is based on https://github.com/CM2Walki/Squad
 ############################################################
 FROM debian:buster-slim
 
@@ -12,7 +13,8 @@ ENV STEAMCMDDIR "${HOMEDIR}/steamcmd"
 ENV STEAMAPPID 1170680
 ENV STEAMAPP tfe
 ENV STEAMAPPDIR "${HOMEDIR}/${STEAMAPP}-dedicated"
-ENV DLURL https://raw.githubusercontent.com/CM2Walki/Squad
+ENV LOGDIR "${STEAMAPPDIR}/TaskForceElite/Saved/Logs"
+#ENV DLURL https://raw.githubusercontent.com/CM2Walki/Squad
 
 # Install, update & upgrade packages
 # Create user for the server
@@ -35,6 +37,7 @@ RUN set -x \
 		locales \
 		netcat \
 		screen \
+		jq \
         && sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
         && dpkg-reconfigure --frontend=noninteractive locales \
 	&& useradd -u "${PUID}" -m "${USER}" \
@@ -56,8 +59,11 @@ RUN set -x \
 	&& apt-get autoremove -y \
 	&& rm -rf /var/lib/apt/lists/*
 
-WORKDIR ${HOMEDIR}/tfe-dedicated/TaskForceElite/Binaries/Linux
+
+
+WORKDIR ${HOMEDIR}
 USER $USER
+
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD         ["/bin/bash", "/entrypoint.sh"]
 
