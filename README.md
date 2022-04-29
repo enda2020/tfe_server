@@ -23,9 +23,8 @@ sudo sh get-docker.sh
 
 Install and start TFE dedicated server
 
-Here we will:
+Here we will start our container and it will take care of below:
 
- - Start our container and it will..
  - Download and Install steamcmd
  - Download latest TFE server
  - Get Initial Admin Tool password
@@ -36,8 +35,40 @@ Here we will:
 mkdir -p ~/tfe/tfe-data && cd ~/tfe
 
 #download and start container 
-sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ enda2020/tfe_server:latest
+sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ --name tfe _server enda2020/tfe_server:latest
+
+#to see process 
+sudo docker container attach tfe_server
 ```
-**Initial Server Tool Credentials will be printed on the screen, make note of them.**
+
+
+**Initial Server Admin Credentials will be printed on the screen, please make note of them!**
+
+Server Logs
+
+GameServer, Master Server(MS) and Dedicated Server (DSC) logs are stored in a single location
+
+```
+cd ~/tfe/tfe-data/TaskForceElite/Saved/Logs
+
+```
+
+Useful Docker Commands
+
+Get Container ID using docker ps
+```
+sudo docker ps
+```
+
+Stop the container
+```
+sudo docker stop CONTAINER_ID
+```
+
+Restart the container / TFE Server 
+```
+sudo docker restart CONTAINER_ID
+```
+
 
 
