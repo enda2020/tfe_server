@@ -29,7 +29,7 @@ eval mkdir -p  ${LOGDIR}
 
 echo "Running Setup.sh...."
 
-eval cd ${STEAMAPPDIR}/CommunityTool/ &&  echo "" | ./Setup.sh | awk '/Username: / {print "=====================================\n| Username: " $2 ", password: " $5 " |\n====================================="}'
+eval cd ${STEAMAPPDIR}/CommunityTool/ &&  echo "" | ./Setup.sh | awk '/Username: / {print "=====================================\n| Username: " $2 ", password: " $5 " |\n====================================="}' >>  ${STEAMAPPDIR}/ServerTool_Credential.txt
 
 
 echo  "Setup script complete! , Return code is $?"
