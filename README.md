@@ -13,7 +13,7 @@ Our First run will take some time to complete , we will:
  - Install Docker
  - Install and start TFE dedicated server
  
-###Install Docker
+### Install Docker
 ```
 ## For other installation methods , please check https://docs.docker.com/engine/install/ubuntu/
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -41,8 +41,9 @@ sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ --name 
 sudo docker container attach tfe_server
 ```
 
+## <span style="color:red">Initial Server Admin Credentials will be printed on the screen, please make note of them! text</span>
 
-**Initial Server Admin Credentials will be printed on the screen, please make note of them!**
+
 
 ## Server Logs
 
