@@ -6,14 +6,14 @@ Task Force Elite is a modern team-based FPS tailored to 6v6 to 8v8 competitive g
 
 # How to use this image
 
-First run
+## First run
 
 Our First run will take some time to complete , we will:
 
  - Install Docker
  - Install and start TFE dedicated server
  
-Install Docker
+###Install Docker
 ```
 ## For other installation methods , please check https://docs.docker.com/engine/install/ubuntu/
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -21,7 +21,7 @@ sudo sh get-docker.sh
 ```   
   
 
-Install and start TFE dedicated server
+### Install and start TFE dedicated server
 
 Here we will start our container and it will take care of below:
 
@@ -31,7 +31,7 @@ Here we will start our container and it will take care of below:
  - Start up the Server processes
 
 ```
-## prepare tfe server run directory in users home
+# prepare tfe server run directory in users home
 mkdir -p ~/tfe/tfe-data && cd ~/tfe
 
 #download and start container 
@@ -44,7 +44,7 @@ sudo docker container attach tfe_server
 
 **Initial Server Admin Credentials will be printed on the screen, please make note of them!**
 
-Server Logs
+## Server Logs
 
 GameServer, Master Server(MS) and Dedicated Server (DSC) logs are stored in a single location
 
@@ -53,7 +53,7 @@ cd ~/tfe/tfe-data/TaskForceElite/Saved/Logs
 
 ```
 
-Useful Docker Commands
+## Useful Docker Commands
 
 Get Container ID using docker ps
 ```
