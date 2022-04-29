@@ -41,9 +41,7 @@ sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ --name 
 sudo docker container attach tfe_server
 ```
 
-<span style="color:red">Initial Server Admin Credentials will be printed on the screen, please make note of them! text</span>
-
-
+:red_circle: Initial Server Admin Credentials will be printed on the screen, please make note of them! :red_circle:
 
 ## Server Logs
 
