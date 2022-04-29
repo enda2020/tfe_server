@@ -75,7 +75,7 @@ sudo docker restart CONTAINER_ID
 # Credits / Links
 
 [CM2Walki/Squad](https://github.com/CM2Walki/Squad)
+
 [Steam Based Game Servers with Docker](https://youtu.be/g1zt44X2xZo)
+
 [Kattoor/tfe.sh](https://gist.github.com/Kattoor/7485c1ad3bfd6255f099d02b8b0f8d2d)
-
-
