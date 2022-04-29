@@ -7,22 +7,34 @@ Task Force Elite is a modern team-based FPS tailored to 6v6 to 8v8 competitive g
 
 # How to use this image
 
-## First run
+## Installation & First run
 
 Our First run will take some time to complete , we will:
 
  - Install Docker
- - Install and start TFE dedicated server
+ - Install Docker Compose
+ - Install and start TFE Dedicated Server
 
 [Demonstration Video](https://youtu.be/ATpLDUX20vY)
 
 ### Install Docker
 ```
-## For other installation methods , please check https://docs.docker.com/engine/install/ubuntu/
+## For other installation methods , please check [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
+
 ```   
   
+### Install Docker Compose 
+```
+## For other installation methods, please check [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
+
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+```
+
 
 ### Install and start TFE dedicated server
 
@@ -37,14 +49,26 @@ Here we will start our container and it will take care of below:
 # prepare tfe server run directory in users home
 mkdir -p ~/tfe/tfe-data && cd ~/tfe
 
-#download and start container 
-sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ --name tfe _server enda2020/tfe_server:latest
+#Download Latest Docker Compose
+curl -O https://raw.githubusercontent.com/enda2020/tfe_server/main/docker-compose.yml
 
-#To see installation progress  
+#Download and Start Container
+
+sudo docker-compose upc -d --force-recreate
+
+# See Installation/Startup Progress
+
+sudo docker logs tfe_server -f
+ 
 sudo docker container attach tfe_server
 ```
 
-:red_circle: Initial Server Admin Credentials will be printed on the screen, please make note of them! :red_circle:
+:red_circle: Initial Server Admin Credentials will be created on the first run, you will find them at ~/tfe/tfe-data/ServerTool_Credential.txt :red_circle:
+
+```
+cat ~/tfe/tfe-data/ServerTool_Credential.txt
+
+```
 
 
 ## Docker Compose
@@ -74,21 +98,17 @@ cd ~/tfe/tfe-data/TaskForceElite/Saved/Logs
 
 ```
 
-##Useeful Docker Commands
+## Useeful Docker Commands
 
-Get Container ID using docker ps
-```
-sudo docker ps
-```
 
 Stop the container
 ```
-sudo docker stop CONTAINER_ID
+sudo docker-comnpose down
 ```
 
-Restart the container / TFE Server 
+Start the container / TFE Server 
 ```
-sudo docker restart CONTAINER_ID
+sudo docker-compose up -d --force-recreate
 ```
 
 # Credits / Links
@@ -98,3 +118,4 @@ sudo docker restart CONTAINER_ID
 [Steam Based Game Servers with Docker](https://youtu.be/g1zt44X2xZo)
 
 [Kattoor/tfe.sh](https://gist.github.com/Kattoor/7485c1ad3bfd6255f099d02b8b0f8d2d)
+
