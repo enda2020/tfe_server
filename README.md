@@ -3,6 +3,7 @@
 Tip of the Spear: Task Force Elite is a causal competitive multiplayer game, inspired by the FPS games of the last 20 years. 
 Task Force Elite is a modern team-based FPS tailored to 6v6 to 8v8 competitive gaming where both rookies and veterans go toe to toe.
 
+[Task Force Elite](https://www.redspear.net/games/fps)
 
 # How to use this image
 
@@ -12,7 +13,9 @@ Our First run will take some time to complete , we will:
 
  - Install Docker
  - Install and start TFE dedicated server
- 
+
+[Demonstration Video](https://youtu.be/ATpLDUX20vY)
+
 ### Install Docker
 ```
 ## For other installation methods , please check https://docs.docker.com/engine/install/ubuntu/
@@ -69,5 +72,10 @@ Restart the container / TFE Server
 sudo docker restart CONTAINER_ID
 ```
 
+# Credits / Links
+
+[CM2Walki/Squad](https://github.com/CM2Walki/Squad)
+[Steam Based Game Servers with Docker](https://youtu.be/g1zt44X2xZo)
+[Kattoor/tfe.sh](https://gist.github.com/Kattoor/7485c1ad3bfd6255f099d02b8b0f8d2d)
 
 
