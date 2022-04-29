@@ -40,11 +40,30 @@ mkdir -p ~/tfe/tfe-data && cd ~/tfe
 #download and start container 
 sudo docker run --net=host -t -v ~/tfe/tfe-data:/home/tfe/tfe-dedicated/ --name tfe _server enda2020/tfe_server:latest
 
-#to see process 
+#To see installation progress  
 sudo docker container attach tfe_server
 ```
 
 :red_circle: Initial Server Admin Credentials will be printed on the screen, please make note of them! :red_circle:
+
+
+## Docker Compose
+
+```
+
+version: '3.9'
+
+services:
+  tfe_dedicated_server:
+    image: enda2020/tfe_server
+    container_name: tfe_server
+    restart: unless-stopped
+    network_mode: "host"
+    tty: true
+    volumes:
+      - ./tfe-data:/home/tfe/tfe-dedicated/
+
+```
 
 ## Server Logs
 
@@ -55,7 +74,7 @@ cd ~/tfe/tfe-data/TaskForceElite/Saved/Logs
 
 ```
 
-## Useful Docker Commands
+##Useeful Docker Commands
 
 Get Container ID using docker ps
 ```
