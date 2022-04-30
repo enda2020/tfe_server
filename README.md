@@ -54,13 +54,12 @@ curl -O https://raw.githubusercontent.com/enda2020/tfe_server/main/docker-compos
 
 #Download and Start Container
 
-sudo docker-compose upc -d --force-recreate
+sudo docker-compose up -d --force-recreate
 
 # See Installation/Startup Progress
 
 sudo docker logs tfe_server -f
  
-sudo docker container attach tfe_server
 ```
 
 :red_circle: Initial Server Admin Credentials will be created on the first run, you will find them at ~/tfe/tfe-data/ServerTool_Credential.txt :red_circle:
@@ -118,4 +117,3 @@ sudo docker-compose up -d --force-recreate
 [Steam Based Game Servers with Docker](https://youtu.be/g1zt44X2xZo)
 
 [Kattoor/tfe.sh](https://gist.github.com/Kattoor/7485c1ad3bfd6255f099d02b8b0f8d2d)
-
