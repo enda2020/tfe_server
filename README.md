@@ -14,6 +14,7 @@ Our First run will take some time to complete , we will:
  - Install Docker
  - Install Docker Compose
  - Install and start TFE Dedicated Server
+ - Find intiial Dedicated Server Password
 
 [Demonstration Video](https://youtu.be/ATpLDUX20vY)
 
@@ -62,7 +63,9 @@ sudo docker logs tfe_server -f
  
 ```
 
-:red_circle: Initial Server Admin Credentials will be created on the first run, you will find them at ~/tfe/tfe-data/ServerTool_Credential.txt :red_circle:
+### Find initial Dedicated Server Admin Password
+
+:red_circle: Initial Dedicated Server Credentials will be created on the first run, you will find them at ~/tfe/tfe-data/ServerTool_Credential.txt :red_circle:
 
 ```
 cat ~/tfe/tfe-data/ServerTool_Credential.txt
