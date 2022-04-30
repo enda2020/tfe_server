@@ -16,11 +16,11 @@ Our First run will take some time to complete , we will:
  - Install and start TFE Dedicated Server
  - Find intiial Dedicated Server Password
 
-[Demonstration Video](https://youtu.be/ATpLDUX20vY)
+[Demonstration Video](https://youtu.be/6lVIDtTdk6E)
 
 ### Install Docker
 ```
-## For other installation methods , please check [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+## For other installation methods , please check https://docs.docker.com/engine/install/ubuntu/
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -29,7 +29,7 @@ sudo sh get-docker.sh
   
 ### Install Docker Compose 
 ```
-## For other installation methods, please check [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
+## For other installation methods, please check https://docs.docker.com/compose/install
 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -83,7 +83,7 @@ services:
   tfe_dedicated_server:
     image: enda2020/tfe_server
     container_name: tfe_server
-    restart: unless-stopped
+    restart: always
     network_mode: "host"
     tty: true
     volumes:
@@ -102,15 +102,21 @@ cd ~/tfe/tfe-data/TaskForceElite/Saved/Logs
 
 ## Useeful Docker Commands
 
+Run these from the ~/tfe directory
 
 Stop the container
+
 ```
+
 sudo docker-comnpose down
+
 ```
 
 Start the container / TFE Server 
+
 ```
 sudo docker-compose up -d --force-recreate
+
 ```
 
 # Credits / Links
