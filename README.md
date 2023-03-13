@@ -100,7 +100,7 @@ cd ~/tfe/tfe-data/TaskForceElite/Saved/Logs
 
 ```
 
-## Useeful Docker Commands
+## Useful Docker Commands
 
 Run these from the ~/tfe directory
 
